@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sites | Liquid Ignition</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="./css/main.css">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,66 +19,77 @@
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">
-                Liquid Ignition
-            </div>
-            <ul>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#drinks">Drinks</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero-text">
+    <nav>
+        <div class="logo">
+            <a href="#hero">Liquid Ignition</a> 
+        </div>
+        <ul>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#drinks">Drinks</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="scroll-section">   
+        <div class="hero-text" id="hero">
             <h1>
                 Premium Cocktails <br>
                 Weekly Events <br>
                 Don't Miss Out! 
             </h1>
+            <a href="#contact">Contact</a>
         </div>
-        <img src="./images/hero-lg.jpg" alt="">
+        <!-- video  -->
+        
     </header>
 
-    <main>
-        <section class="events-section" id="events">
-            <h2>Upcoming Events</h2>
+    <div class="video-container fixed-position" id="video">
+        <video autoplay muted loop id="hero-video">
+            <source src="./assets/video.mp4" type="video/mp4">
+            <!-- <source src="movie.ogg" type="video/ogg"> -->
+          Your browser does not support the video tag.
+        </video>
+    </div>
 
-            <div class="events">
-                <div class="event">
-                    <img src="./images/murder-mystery.jpg" alt="Murder Mystery">
-                    <div class="text">
-                        <p>Murder Mystery Cocktail Night</p>
-                        <p>A night full of fun and mystery, can you find out who the murder is?
-                            
-                            Speciality cocktails for the night include 
-                            </p>
-                        <ul>
-                            <li>Black Widow</li>
-                            <li>Crime of Passion</li>
-                            <li>The Lady Killer</li>
-                            <li>Hammer Horror</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="event">
-                    <img src="./images/1920-party.jpg" alt="1920s party">
-                    <div class="text">
-                        <p>1920's Party</p>
-                        <p>Cocktail dress? Check. Suit? Check. </p>
-                        <p>Welcome to a night which class and eloquence is everything. Make sure you have polished your dancing shoes as this party will have non-stop music, speciality 1920's cocktails and of course fountains of champagne. </p>
-                        <p>Speciality cocktails for the night include </p>
-                        <ul>
-                            <li>The Bee's Knees</li>
-                            <li>The Singapore Sling</li>
-                            <li>The Hanky-Panky</li>
-                            <li>The Bamboo</li>
-                        </ul>
-                    </div>
+    <main>
+        <section class="events-section scroll-section" id="events">
+            <h2>Upcoming Events</h2>
+        </section>
+        <section class="event-page event-1">
+            <div class="event">
+                <img src="./images/murder-mystery.jpg" alt="Murder Mystery">
+                <div class="text">
+                    <h2>Murder Mystery Cocktail Night</h2>
+                    <p>A night full of fun and mystery, can you find out who the murder is?
+                        
+                        Speciality cocktails for the night include 
+                        </p>
+                    <ul>
+                        <li>Black Widow</li>
+                        <li>Crime of Passion</li>
+                        <li>The Lady Killer</li>
+                        <li>Hammer Horror</li>
+                    </ul>
                 </div>
             </div>
         </section>
-
+        <section class="event-page event-2">
+            <div class="event">
+                <img src="./images/1920-party.jpg" alt="1920s party">
+                <div class="text">
+                    <h2>1920's Party</h2>
+                    <p>Cocktail dress? Check. Suit? Check. </p>
+                    <p>Welcome to a night which class and eloquence is everything. Make sure you have polished your dancing shoes as this party will have non-stop music, speciality 1920's cocktails and of course fountains of champagne. </p>
+                    <p>Speciality cocktails for the night include </p>
+                    <ul>
+                        <li>The Bee's Knees</li>
+                        <li>The Singapore Sling</li>
+                        <li>The Hanky-Panky</li>
+                        <li>The Bamboo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <section class="drink-section" id="drinks">
             <h2>Drinks</h2>
             <div class="drinks">
@@ -160,5 +172,7 @@
             </p>
         </div>
     </footer>
+
+    <script src="./index.js"></script>
 </body>
 </html>

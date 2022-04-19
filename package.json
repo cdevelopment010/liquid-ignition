@@ -1,0 +1,27 @@
+{
+  "name": "liquid-ignition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "node-sass -w ./sass -o ./css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdevelopment010/liquid-ignition.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdevelopment010/liquid-ignition/issues"
+  },
+  "homepage": "https://github.com/cdevelopment010/liquid-ignition#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.50.0"
+  }
+}
