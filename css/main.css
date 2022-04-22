@@ -58,12 +58,28 @@ nav {
   nav li {
     list-style-type: none;
     margin-left: 5px; }
+  nav a {
+    position: relative; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background-color: #627F4B;
+      bottom: -3px;
+      left: 0;
+      transition: 0.2s; }
+    nav a:hover::after, nav a:active::after, nav a:focus::after {
+      width: 100%; }
 
 header {
   position: relative;
   height: 100vh;
   width: 100vw;
-  display: grid; }
+  display: grid;
+  overflow-x: hidden; }
+  header h2 {
+    color: #FFFFFF; }
   header .hero-text {
     align-self: center;
     justify-self: center;
@@ -77,6 +93,24 @@ header {
       padding: 3px 20px;
       background-color: #684B7F;
       border-radius: 2px; }
+      header .hero-text a:hover, header .hero-text a:focus {
+        background-color: #627F4B; }
+  header .left {
+    position: fixed;
+    --left: 50;
+    --top: 50;
+    top: calc(var(--top) * 1%);
+    left: calc(var(--left) * 1%);
+    transform: translateX(calc(-1*calc(var(--left)*1%)));
+    transition: 0.3s; }
+  header .right {
+    position: fixed;
+    --right: -50;
+    --top: 50;
+    top: calc(var(--top) * 1%);
+    right: calc(var(--right) * 1%);
+    transform: translateX(calc(-1*calc(var(--right)*1%)));
+    transition: 0.3s; }
 
 .video-container {
   transition: 0.2s;
@@ -106,8 +140,7 @@ header {
 
 .scroll-section {
   padding-top: 65px;
-  min-height: auto;
-  height: 75vh; }
+  min-height: 200vh; }
 
 .events-section {
   display: flex;
@@ -165,13 +198,20 @@ img {
 
 @media screen and (min-width: 1024px) {
   .event-2 {
-    margin-top: -45px; } }
+    margin-top: -45px; }
+    .event-2 .event img {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2; }
+    .event-2 .event .text {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; } }
 
 .drink-section {
   background-color: white;
   padding-top: 65px; }
   .drink-section h2 {
-    text-align: center; }
+    text-align: center;
+    padding-bottom: 20px; }
   .drink-section .drinks {
     display: grid;
     grid-template-columns: 1fr 1fr; }
@@ -238,5 +278,7 @@ footer {
     justify-content: space-evenly; }
     footer ul li {
       list-style-type: none; }
+      footer ul li:focus i, footer ul li:hover i, footer ul li:active i {
+        color: #627F4B; }
   footer p {
     text-align: center; }

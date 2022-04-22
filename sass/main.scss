@@ -38,6 +38,27 @@ nav {
         list-style-type: none;
         margin-left: 5px;
     }
+
+    a {
+        position: relative; 
+
+        &::after {
+            content: ''; 
+            position: absolute; 
+            width: 0; 
+            height: 3px;
+            background-color: $accent-col; 
+            bottom: -3px; 
+            left: 0; 
+            transition: 0.2s; 
+        }
+
+        &:hover, &:active, &:focus {
+            &::after {
+                width: 100%; 
+            }
+        }
+    }
 }
 
 
@@ -46,9 +67,12 @@ header {
     height: 100vh; 
     width: 100vw;
     display: grid;
+    overflow-x: hidden;
     
    
-
+    h2 {
+        color: $header-text-col; 
+    }
     .hero-text {
         
         align-self: center;
@@ -64,8 +88,31 @@ header {
             padding: 3px 20px; 
             background-color: $primary-col;
             border-radius: 2px;
+
+            &:hover, &:focus {
+                background-color: $accent-col; 
+            }
         }
     } 
+
+    .left {
+        position: fixed;
+        --left: 50; 
+        --top: 50;
+        top: calc(var(--top) * 1%);
+        left: calc(var(--left) * 1%); 
+        transform: translateX(calc(-1*calc(var(--left)*1%))); 
+        transition: 0.3s; 
+    }
+    .right {
+        position: fixed;
+        --right: -50; 
+        --top: 50;
+        top: calc(var(--top) * 1%);
+        right: calc(var(--right) * 1%); 
+        transform: translateX(calc(-1*calc(var(--right)*1%))); 
+        transition: 0.3s; 
+    }
 }
 
 
@@ -109,8 +156,8 @@ header {
 // scroll-section 
 .scroll-section {
     padding-top: 65px; 
-    min-height: auto;
-    height: 75vh; 
+    min-height: 200vh;
+    // height: 75vh; 
 
 }
 
@@ -190,6 +237,19 @@ img {
 .event-2 {
     @include resize('laptop') {
         margin-top: -45px; 
+
+        .event {
+            img {
+                grid-column: 2 / 3; 
+                grid-row: 1 / 2;
+            }
+            .text {
+                grid-column: 1 / 2;  
+                grid-row: 1 / 2;
+            }
+
+        }
+
     }
 }
 
@@ -199,6 +259,7 @@ img {
     padding-top: 65px;
     h2 {
         text-align: center;
+        padding-bottom: 20px; 
     }
 
     .drinks {
@@ -305,6 +366,11 @@ footer {
 
         li {
             list-style-type: none;
+            &:focus, &:hover, &:active {
+                i {
+                    color: $accent-col;
+                }
+            }
         }
     }
 
